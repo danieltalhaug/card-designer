@@ -1,0 +1,10 @@
+import 'primevue/resources/themes/aura-dark-blue/theme.css';
+import './assets/main.css';
+
+import { createApp } from 'vue';
+import PrimeVue from 'primevue/config';
+import App from './App.vue';
+
+const app = createApp(App);
+app.use(PrimeVue);
+app.mount('#app');
