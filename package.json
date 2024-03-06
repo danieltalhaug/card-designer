@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tresjs/cientos": "^3.8.0",
     "@tresjs/core": "^3.7.0",
     "primevue": "^3.49.1",
     "three": "^0.162.0",
