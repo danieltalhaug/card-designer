@@ -4,9 +4,10 @@
  */
 import { ref } from "vue";
 
+const autoRotate = ref<boolean>(true);
+const autoRotateSpeed = ref<number>(2);
+
 export function useSettingsOrbitControls() {
-    const autoRotate = ref<boolean>(true);
-    const autoRotateSpeed = ref<number>(2);
 
     return {
         autoRotate,
