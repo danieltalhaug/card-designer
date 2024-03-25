@@ -9,3 +9,14 @@
     --space-xxl:  calc(5.25 * var(--space-unit));
 }
 
+.settings-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.settings-form section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}

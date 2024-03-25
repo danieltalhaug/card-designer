@@ -4,17 +4,19 @@ import { OrbitControls } from '@tresjs/cientos';
 
 import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
 import { useSettingsGridHelper } from '@/composables/useSettingsGridHelper';
+import { useSettingsScene } from '@/composables/useSettingsScene';
 
 const { autoRotate, autoRotateSpeed } = useSettingsOrbitControls();
 const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
+const { colorScene, colorFloor } = useSettingsScene();
 
 </script>
 
 <template>
-    <TresCanvas clear-color="#82DBC5" shadows window-size>
+    <TresCanvas :clear-color="`#${colorScene}`" shadows window-size>
         <TresMesh cast-shadow>
             <TresTorusGeometry :args="[0.5, 0.25, 16, 64]" />
-            <TresMeshToonMaterial color="orange" />
+            <TresMeshToonMaterial color="red" />
         </TresMesh>
         <TresMesh
             :position="[0, -1, 0]"
@@ -22,7 +24,7 @@ const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
             receive-shadow
         >
             <TresCircleGeometry :args="[40, 40]" />
-            <TresMeshToonMaterial color="#82DBC5" />
+            <TresMeshToonMaterial :color="`#${colorFloor}`" />
         </TresMesh>
         <TresPerspectiveCamera
             :position="[3, 3, 3]"
@@ -32,7 +34,10 @@ const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
             :auto-rotate
             :auto-rotate-speed
         />
-        <TresAmbientLight :intensity="1" />
+        <TresAmbientLight
+            :intensity="1"
+            color="white" 
+        />
         <TresDirectionalLight
             color="white"
             :position="[0, 50, 0]"
