@@ -1,8 +1,15 @@
 <script setup lang="ts">
+// Libs
 import { ref } from 'vue';
+
+// Components
+import Sidebar from 'primevue/sidebar';
 import Button from 'primevue/button';
 import ToggleButton from 'primevue/togglebutton';
 import CardEditor from '@/components/CardEditor.vue';
+import SettingsSidebarContent from '@/components/SettingsSidebarContent.vue';
+
+// Composables
 import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
 import { useSettingsGridHelper } from '@/composables/useSettingsGridHelper';
 
@@ -32,8 +39,27 @@ const showSettings = ref<boolean>(false);
                 title="Toggle grid"
                 @click="toggleGridHelper()"
             />
+            <Button
+                severity="secondary"
+                icon="pi pi-cog"
+                aria-label="Toggle settings"
+                title="Toggle settings"
+                :aria-controls="showSettings ? 'settings' : undefined"
+                :aria-expanded="showSettings"
+                @click="showSettings = true"
+            />
         </section>
     </main>
+    <aside>
+        <Sidebar
+            id="sbar"
+            v-model:visible="showSettings"
+            position="right"
+            role="settings"
+        >
+            <SettingsSidebarContent />
+        </Sidebar>
+    </aside>
 </template>
 
 <style scoped>
