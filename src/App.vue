@@ -23,6 +23,7 @@ const showSettings = ref<boolean>(false);
                 on-label=""
                 off-label=""
                 aria-label="Toggle camera auto rotation"
+                title="Toggle camera auto rotation"
             />
             <Button
                 severity="secondary"
