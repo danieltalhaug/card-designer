@@ -11,10 +11,13 @@ const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
 </script>
 
 <template>
-    <TresCanvas clear-color="#82DBC5" window-size>
-        <TresMesh>
-            <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
-            <TresMeshBasicMaterial color="orange" />
+        <TresMesh
+            :position="[0, -1, 0]"
+            :rotation="[-1.571, 0, 0]"
+            receive-shadow
+        >
+            <TresCircleGeometry :args="[40, 40]" />
+            <TresMeshToonMaterial color="#82DBC5" />
         </TresMesh>
         <TresPerspectiveCamera
             :position="[3, 3, 3]"
