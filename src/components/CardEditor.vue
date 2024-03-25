@@ -3,8 +3,10 @@ import { TresCanvas } from '@tresjs/core';
 import { OrbitControls } from '@tresjs/cientos';
 
 import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
+import { useSettingsGridHelper } from '@/composables/useSettingsGridHelper';
 
 const { autoRotate, autoRotateSpeed } = useSettingsOrbitControls();
+const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
 
 </script>
 
@@ -23,7 +25,10 @@ const { autoRotate, autoRotateSpeed } = useSettingsOrbitControls();
             :auto-rotate-speed
         />
         <TresAmbientLight :intensity="1" />
-        <TresGridHelper />
+        <TresGridHelper
+            :position="[...gridHelperPosition]"
+            :args="gridHelperArgs"
+        />
     </TresCanvas>
 </template>
 
