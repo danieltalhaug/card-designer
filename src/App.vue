@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import Button from 'primevue/button';
 import ToggleButton from 'primevue/togglebutton';
 import CardEditor from '@/components/CardEditor.vue';
 import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
@@ -23,13 +24,11 @@ const showSettings = ref<boolean>(false);
                 off-label=""
                 aria-label="Toggle camera auto rotation"
             />
-            <ToggleButton
-                :value="gridHelperPosition[1] === -2"
-                on-icon="pi pi-stop"
-                off-icon="pi pi-table"
-                on-label=""
-                off-label=""
+            <Button
+                severity="secondary"
+                :icon="gridHelperPosition[1] === -2 ? 'pi pi-table' : 'pi pi-stop'"
                 aria-label="Toggle grid"
+                title="Toggle grid"
                 @click="toggleGridHelper()"
             />
         </section>
