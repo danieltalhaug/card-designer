@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import ToggleButton from 'primevue/togglebutton';
 import CardEditor from '@/components/CardEditor.vue';
+import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
 import { useSettingsGridHelper } from '@/composables/useSettingsGridHelper';
 
+const { autoRotate } = useSettingsOrbitControls();
 const { gridHelperPosition, toggleGridHelper } = useSettingsGridHelper();
+
+const showSettings = ref<boolean>(false);
 </script>
 
 <template>
