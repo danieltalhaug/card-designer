@@ -5,18 +5,20 @@ import { OrbitControls } from '@tresjs/cientos';
 import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
 import { useSettingsGridHelper } from '@/composables/useSettingsGridHelper';
 import { useSettingsScene } from '@/composables/useSettingsScene';
+import { useSettingsGeometry } from '@/composables/useSettingsGeometry';
 
 const { autoRotate, autoRotateSpeed } = useSettingsOrbitControls();
 const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
 const { colorScene, colorFloor } = useSettingsScene();
+const { geometrySelected, geometryColor } = useSettingsGeometry();
 
 </script>
 
 <template>
     <TresCanvas :clear-color="`#${colorScene}`" shadows window-size>
         <TresMesh cast-shadow>
-            <TresTorusGeometry :args="[0.5, 0.25, 16, 64]" />
-            <TresMeshToonMaterial color="red" />
+            <Component :is="geometrySelected.component" />
+            <TresMeshToonMaterial :color="`#${geometryColor}`" />
         </TresMesh>
         <TresMesh
             :position="[0, -1, 0]"
