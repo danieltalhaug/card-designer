@@ -35,6 +35,8 @@ const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSet
         <OrbitControls
             :auto-rotate
             :auto-rotate-speed
+            :max-polar-angle="Math.PI / 2"
+            :max-distance="15"
         />
         <TresAmbientLight
             :intensity="1"
