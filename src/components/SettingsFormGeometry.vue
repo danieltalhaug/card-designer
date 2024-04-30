@@ -3,8 +3,9 @@ import Dropdown from 'primevue/dropdown';
 import ColorPicker from 'primevue/colorpicker';
 import { useSettingsGeometry } from '@/composables/useSettingsGeometry';
 import { geometries } from '@/utils/selectableGeometries';
+import { meshMaterials } from '@/utils/selectableMeshMaterials';
 
-const { geometrySelected, geometryColor } = useSettingsGeometry();
+const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSettingsGeometry();
 </script>
 
 <template>
@@ -15,6 +16,16 @@ const { geometrySelected, geometryColor } = useSettingsGeometry();
                 id="geometrySelected" 
                 v-model="geometrySelected"
                 :options="geometries"
+                option-label="name"
+            />
+        </section>
+
+        <section>
+            <label for="geometryMesh">Geometry mesh material</label>
+            <Dropdown
+                id="geometryMesh" 
+                v-model="geometryMeshMaterialSelected"
+                :options="meshMaterials"
                 option-label="name"
             />
         </section>

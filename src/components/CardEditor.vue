@@ -10,7 +10,7 @@ import { useSettingsGeometry } from '@/composables/useSettingsGeometry';
 const { autoRotate, autoRotateSpeed } = useSettingsOrbitControls();
 const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
 const { colorScene, colorFloor } = useSettingsScene();
-const { geometrySelected, geometryColor } = useSettingsGeometry();
+const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSettingsGeometry();
 
 </script>
 
@@ -18,7 +18,7 @@ const { geometrySelected, geometryColor } = useSettingsGeometry();
     <TresCanvas :clear-color="`#${colorScene}`" shadows window-size>
         <TresMesh cast-shadow>
             <Component :is="geometrySelected.component" />
-            <TresMeshToonMaterial :color="`#${geometryColor}`" />
+            <Component :is="geometryMeshMaterialSelected.component" :color="`#${geometryColor}`" />
         </TresMesh>
         <TresMesh
             :position="[0, -1, 0]"
