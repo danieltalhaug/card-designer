@@ -4,8 +4,8 @@ export type meshMaterial = {
 };
 
 export const meshMaterials = <meshMaterial[]> [
-    {name: 'Basic Material', component: 'TresMeshBasicMaterial'},
     {name: 'Standard Material', component: 'TresMeshStandardMaterial'},
+    {name: 'Basic Material', component: 'TresMeshBasicMaterial'},
     {name: 'Toon Material', component: 'TresMeshToonMaterial'},
     {name: 'Physical Material', component: 'TresMeshPhysicalMaterial'},
     {name: 'Lambert Material', component: 'TresMeshLambertMaterial'},
