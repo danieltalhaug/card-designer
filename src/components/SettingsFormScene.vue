@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import ColorPicker from 'primevue/colorpicker';
+import Dropdown from 'primevue/dropdown';
 import { useSettingsScene } from '@/composables/useSettingsScene';
+import { meshMaterials } from '@/utils/selectableMeshMaterials';
 
-const { colorScene, colorFloor } = useSettingsScene();
+const { sceneColor, sceneFloorMeshMaterial, sceneFloorColor } = useSettingsScene();
 </script>
 
 <template>
@@ -11,9 +13,19 @@ const { colorScene, colorFloor } = useSettingsScene();
             <label for="color">Scene colour</label>
             <ColorPicker
                 id="color"
-                v-model="colorScene"
-                :default-color="colorScene"
+                v-model="sceneColor"
+                :default-color="sceneColor"
                 format="hex"
+            />
+        </section>
+
+        <section>
+            <label for="floorMeshMaterial">Scene mesh material</label>
+            <Dropdown
+                id="floorMeshMaterial"
+                v-model="sceneFloorMeshMaterial"
+                :options="meshMaterials"
+                option-label="name"
             />
         </section>
 
@@ -21,8 +33,8 @@ const { colorScene, colorFloor } = useSettingsScene();
             <label for="color">Floor colour</label>
             <ColorPicker
                 id="color"
-                v-model="colorFloor"
-                :default-color="`#${colorFloor}`"
+                v-model="sceneFloorColor"
+                :default-color="`#${sceneFloorColor}`"
                 format="hex"
             />
         </section>

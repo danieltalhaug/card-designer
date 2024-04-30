@@ -1,13 +1,17 @@
 import { ref } from "vue";
+import type { meshMaterial } from '@/utils/selectableMeshMaterials';
+import { meshMaterials } from '@/utils/selectableMeshMaterials';
 
 type hex = string;
 
-const colorScene = ref<hex>('1e1e21');
-const colorFloor = ref<hex>('2f2f36');
+const sceneColor = ref<hex>('1e1e21');
+const sceneFloorMeshMaterial = ref<meshMaterial>(meshMaterials[0]);
+const sceneFloorColor = ref<hex>('2f2f36');
 
 export function useSettingsScene() {
     return {
-        colorScene,
-        colorFloor,
+        sceneColor,
+        sceneFloorMeshMaterial,
+        sceneFloorColor,
     };
 }
