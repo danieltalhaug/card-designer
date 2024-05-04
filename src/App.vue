@@ -12,9 +12,11 @@ import SettingsSidebarContent from '@/components/SettingsSidebarContent.vue';
 // Composables
 import { useSettingsOrbitControls } from '@/composables/useSettingsOrbitControls';
 import { useSettingsGridHelper } from '@/composables/useSettingsGridHelper';
+import { useSettingsHero } from '@/composables/useSettingsHero';
 
 const { autoRotate } = useSettingsOrbitControls();
 const { gridHelperPosition, toggleGridHelper } = useSettingsGridHelper();
+const { heroPosition } = useSettingsHero();
 
 const showSettings = ref<boolean>(false);
 </script>
@@ -49,6 +51,10 @@ const showSettings = ref<boolean>(false);
                 @click="showSettings = true"
             />
         </section>
+        <section class="hero-details" title="Hero position">
+            <i class="pi pi-box" />
+            {{ `x ${heroPosition.x}, y ${heroPosition.y}, x ${heroPosition.z}` }}
+        </section>
     </main>
     <aside>
         <Sidebar
@@ -66,5 +72,16 @@ const showSettings = ref<boolean>(false);
 .actions {
     display: flex;
     gap: 8px;
+}
+
+.hero-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    padding: 16px;
+    gap: 16px;
 }
 </style>
