@@ -1,8 +1,7 @@
 import { ref } from "vue";
+import type { hex } from '@/types/';
 import type { meshMaterial } from '@/utils/selectableMeshMaterials';
 import { meshMaterials } from '@/utils/selectableMeshMaterials';
-
-type hex = string;
 
 const sceneColor = ref<hex>('1e1e21');
 const sceneFloorMeshMaterial = ref<meshMaterial>(meshMaterials[0]);
