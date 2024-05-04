@@ -10,7 +10,7 @@ const lastUsedAccordion = ref(useLocalStorage('lastUsedAccordionIndex', 0));
 
 const settings = [
 	{ header: 'Scene', component: SettingsFormScene },
-	{ header: 'Geometry', component: SettingsFormHero },
+	{ header: 'Hero', component: SettingsFormHero },
 ];
 </script>
 

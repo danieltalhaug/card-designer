@@ -10,13 +10,21 @@ import { useSettingsHero } from '@/composables/useSettingsHero';
 const { autoRotate, autoRotateSpeed } = useSettingsOrbitControls();
 const { gridHelperPosition, gridHelperArgs } = useSettingsGridHelper();
 const { sceneColor, sceneFloorMeshMaterial, sceneFloorColor } = useSettingsScene();
-const { heroGeometrySelected, heroMeshMaterialSelected, heroMaterialColor } = useSettingsHero();
+const {
+    heroGeometrySelected,
+    heroMeshMaterialSelected,
+    heroMaterialColor,
+    heroPosition,
+} = useSettingsHero();
 
 </script>
 
 <template>
     <TresCanvas :clear-color="`#${sceneColor}`" shadows window-size>
-        <TresMesh cast-shadow>
+        <TresMesh
+            :position="[heroPosition.x, heroPosition.z, heroPosition.y]"
+            cast-shadow
+        >
             <Component :is="heroGeometrySelected.component" />
             <Component :is="heroMeshMaterialSelected.component" :color="`#${heroMaterialColor}`" />
         </TresMesh>
