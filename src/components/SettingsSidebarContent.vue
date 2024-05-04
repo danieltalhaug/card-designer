@@ -3,14 +3,14 @@ import { ref } from 'vue';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
 import SettingsFormScene from './SettingsFormScene.vue';
-import SettingsFormGeometry from './SettingsFormGeometry.vue';
+import SettingsFormHero from './SettingsFormHero.vue';
 import { useLocalStorage } from '@vueuse/core';
 
 const lastUsedAccordion = ref(useLocalStorage('lastUsedAccordionIndex', 0));
 
 const settings = [
 	{ header: 'Scene', component: SettingsFormScene },
-	{ header: 'Geometry', component: SettingsFormGeometry },
+	{ header: 'Geometry', component: SettingsFormHero },
 ];
 </script>
 

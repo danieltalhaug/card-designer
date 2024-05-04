@@ -4,15 +4,15 @@ import { geometries } from '@/utils/selectableGeometries';
 import type { meshMaterial } from '@/utils/selectableMeshMaterials';
 import { meshMaterials } from '@/utils/selectableMeshMaterials';
 
-const geometrySelected = ref<geometry>(geometries[0]);
-const geometryMeshMaterialSelected = ref<meshMaterial>(meshMaterials[0]);
-const geometryColor = ref<string>('FF0000');
+const heroGeometrySelected = ref<geometry>(geometries[0]);
+const heroMeshMaterialSelected = ref<meshMaterial>(meshMaterials[0]);
+const heroMaterialColor = ref<string>('FF0000');
 
-export function useSettingsGeometry() {
+export function useSettingsHero() {
 
     return {
-        geometrySelected,
-        geometryMeshMaterialSelected,
-        geometryColor,
+        heroGeometrySelected,
+        heroMeshMaterialSelected,
+        heroMaterialColor,
     };
 }

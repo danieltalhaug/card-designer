@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Dropdown from 'primevue/dropdown';
 import ColorPicker from 'primevue/colorpicker';
-import { useSettingsGeometry } from '@/composables/useSettingsGeometry';
+import { useSettingsHero } from '@/composables/useSettingsHero';
 import { geometries } from '@/utils/selectableGeometries';
 import { meshMaterials } from '@/utils/selectableMeshMaterials';
 
-const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSettingsGeometry();
+const { heroGeometrySelected, heroMeshMaterialSelected, heroMaterialColor } = useSettingsHero();
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSet
             <label for="geometrySelected">Geometry</label>
             <Dropdown
                 id="geometrySelected" 
-                v-model="geometrySelected"
+                v-model="heroGeometrySelected"
                 :options="geometries"
                 option-label="name"
             />
@@ -24,7 +24,7 @@ const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSet
             <label for="geometryMesh">Geometry mesh material</label>
             <Dropdown
                 id="geometryMesh" 
-                v-model="geometryMeshMaterialSelected"
+                v-model="heroMeshMaterialSelected"
                 :options="meshMaterials"
                 option-label="name"
             />
@@ -34,8 +34,8 @@ const { geometrySelected, geometryMeshMaterialSelected, geometryColor } = useSet
             <label for="geometryColor">Geometry colour</label>
             <ColorPicker
                 id="geometryColor" 
-                v-model="geometryColor"
-                :default-color="geometryColor"
+                v-model="heroMaterialColor"
+                :default-color="heroMaterialColor"
                 format="hex"
             />
         </section>
