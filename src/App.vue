@@ -54,7 +54,7 @@ const showSettings = ref<boolean>(false);
         <section class="hero-details">
             <div class="hero-detail" title="Hero position">
                 <i class="pi pi-box" />
-                {{ `x ${heroGeometrySelected.position.x}, y ${heroGeometrySelected.position.y}, x ${heroGeometrySelected.position.z}` }}
+                {{ `x ${heroGeometrySelected.position.x}, y ${heroGeometrySelected.position.y}, z ${heroGeometrySelected.position.z}` }}
             </div>
             <div class="hero-detail" title="Hero rotation">
                 <i class="pi pi-sync" />
