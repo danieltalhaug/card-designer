@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { TresCanvas } from '@tresjs/core';
 import { OrbitControls } from '@tresjs/cientos';
 
@@ -16,12 +17,25 @@ const {
     heroMaterialColor,
 } = useSettingsHero();
 
+function degreesToRadians(deg: number): number {
+    return (deg * Math.PI) / 180;
+}
+
+const heroRotation = computed(() => {
+    return [
+        degreesToRadians(heroGeometrySelected.value.rotation.x),
+        degreesToRadians(heroGeometrySelected.value.rotation.z),
+        degreesToRadians(heroGeometrySelected.value.rotation.y),
+    ]
+});
+
 </script>
 
 <template>
     <TresCanvas :clear-color="`#${sceneColor}`" shadows window-size>
         <TresMesh
             :position="[heroGeometrySelected.position.x, heroGeometrySelected.position.z, heroGeometrySelected.position.y]"
+            :rotation="heroRotation"
             cast-shadow
         >
             <Component :is="heroGeometrySelected.component" />

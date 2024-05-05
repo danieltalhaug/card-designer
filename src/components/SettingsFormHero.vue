@@ -12,6 +12,7 @@ const {
     heroMeshMaterialSelected,
     heroMaterialColor,
     resetHeroPosition,
+    resetHeroRotation,
 } = useSettingsHero();
 
 </script>
@@ -87,6 +88,49 @@ const {
                     icon="pi pi-replay"
                     severity="secondary"
                     @click="resetHeroPosition()"
+                />
+            </div>
+        </section>
+
+        <section>
+            <label for="heroRotation">Rotation</label>
+            <div id="heroRotation" class="position-sliders">
+                <span>
+                    <label for="heroRotationX">X</label>
+                    <Slider
+                        v-model="heroGeometrySelected.rotation.x"
+                        id="heroRotationX"
+                        :min="-360"
+                        :max="360"
+                        :step="1"
+                    />
+                </span>
+                <span>
+                    <label for="heroRotationY">Y</label>
+                    <Slider
+                        v-model="heroGeometrySelected.rotation.y"
+                        id="heroRotationY"
+                        :min="-360"
+                        :max="360"
+                        :step="1"
+                    />
+                </span>
+                <span>
+                    <label for="heroRotationZ">Z</label>
+                    <Slider
+                        v-model="heroGeometrySelected.rotation.z"
+                        id="heroRotationZ"
+                        :min="-360"
+                        :max="360"
+                        :step="1"
+                    />
+                </span>
+                <Button
+                    class="action"
+                    label="Reset"
+                    icon="pi pi-replay"
+                    severity="secondary"
+                    @click="resetHeroRotation()"
                 />
             </div>
         </section>

@@ -51,9 +51,15 @@ const showSettings = ref<boolean>(false);
                 @click="showSettings = true"
             />
         </section>
-        <section class="hero-details" title="Hero position">
-            <i class="pi pi-box" />
-            {{ `x ${heroGeometrySelected.position.x}, y ${heroGeometrySelected.position.y}, x ${heroGeometrySelected.position.z}` }}
+        <section class="hero-details">
+            <div class="hero-detail" title="Hero position">
+                <i class="pi pi-box" />
+                {{ `x ${heroGeometrySelected.position.x}, y ${heroGeometrySelected.position.y}, x ${heroGeometrySelected.position.z}` }}
+            </div>
+            <div class="hero-detail" title="Hero rotation">
+                <i class="pi pi-sync" />
+                {{ `x ${heroGeometrySelected.rotation.x}, y ${heroGeometrySelected.rotation.y}, z ${heroGeometrySelected.rotation.z}` }}
+            </div>
         </section>
     </main>
     <aside>
@@ -82,6 +88,12 @@ const showSettings = ref<boolean>(false);
     align-items: center;
     z-index: 1;
     padding: 16px;
+    gap: 32px;
+}
+
+.hero-details .hero-detail {
+    display: flex;
+    align-items: center;
     gap: 16px;
 }
 </style>

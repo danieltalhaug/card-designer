@@ -18,10 +18,19 @@ export function useSettingsHero() {
         };
     }
 
+    function resetHeroRotation() {
+        heroGeometrySelected.value.rotation = {
+            x: 0,
+            y: 0,
+            z: 0,
+        };
+    }
+
     return {
         heroGeometrySelected,
         heroMeshMaterialSelected,
         heroMaterialColor,
         resetHeroPosition,
+        resetHeroRotation,
     };
 }

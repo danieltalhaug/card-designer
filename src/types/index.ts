@@ -5,3 +5,9 @@ export type position = {
     y: number,
     z: number,
 }
+
+export type rotation = {
+    x: number,
+    y: number,
+    z: number,
+}
