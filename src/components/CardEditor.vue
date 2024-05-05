@@ -34,7 +34,7 @@ const heroRotation = computed(() => {
 <template>
     <TresCanvas :clear-color="`#${sceneColor}`" shadows window-size>
         <TresMesh
-            :position="[heroGeometrySelected.position.x, heroGeometrySelected.position.z, heroGeometrySelected.position.y]"
+            :position="[...Object.values(heroGeometrySelected.position)]"
             :rotation="heroRotation"
             cast-shadow
         >

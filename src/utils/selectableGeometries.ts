@@ -17,7 +17,7 @@ export const geometries = <geometry[]> [
     {
         name: 'Capsule Geometry',
         component: 'TresCapsuleGeometry',
-        position: { x: 0, y: 0, z: 1 },
+        position: { x: 0, y: 1, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
@@ -41,7 +41,7 @@ export const geometries = <geometry[]> [
     {
         name: 'Dodecahedron Geometry',
         component: 'TresDodecahedronGeometry',
-        position: { x: 0, y: 0, z: 0.3 },
+        position: { x: 0, y: 0.3, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
@@ -59,19 +59,19 @@ export const geometries = <geometry[]> [
     {
         name: 'Icosahedron Geometry',
         component: 'TresIcosahedronGeometry',
-        position: { x: 0, y: 0, z: 0.3 },
+        position: { x: 0, y: 0.3, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
         name: 'Lathe Geometry',
         component: 'TresLatheGeometry',
-        position: { x: 0, y: 0, z: -0.2 },
+        position: { x: 0, y: -0.2, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
         name: 'Octahedron Geometry',
         component: 'TresOctahedronGeometry',
-        position: { x: 0, y: 0, z: 0.4 },
+        position: { x: 0, y: 0.4, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
@@ -89,7 +89,7 @@ export const geometries = <geometry[]> [
     {
         name: 'Ring Geometry',
         component: 'TresRingGeometry',
-        position: { x: 0, y: 0, z: 0.2 },
+        position: { x: 0, y: 0.2, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
@@ -101,7 +101,7 @@ export const geometries = <geometry[]> [
     {
         name: 'Sphere Geometry',
         component: 'TresSphereGeometry',
-        position: { x: 0, y: 0, z: 0.3 },
+        position: { x: 0, y: 0.3, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
@@ -113,19 +113,19 @@ export const geometries = <geometry[]> [
     {
         name: 'Torus Geometry',
         component: 'TresTorusGeometry',
-        position: { x: 0, y: 0, z: 0.7 },
+        position: { x: 0, y: 0.7, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
         name: 'Torus Knot Geometry',
         component: 'TresTorusKnotGeometry',
-        position: { x: 0, y: 0, z: 1.1 },
+        position: { x: 0, y: 0.1, z: 1 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
         name: 'Tube Geometry',
         component: 'TresTubeGeometry',
-        position: { x: 0, y: 0, z: 0.4 },
+        position: { x: 0, y: 0.4, z: 0 },
         rotation: { x: 0, y: 0, z: 0 },
     },
     {
