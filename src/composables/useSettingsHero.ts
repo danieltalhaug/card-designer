@@ -8,15 +8,10 @@ import { meshMaterials } from '@/utils/selectableMeshMaterials';
 const heroGeometrySelected = ref<geometry>(geometries[0]);
 const heroMeshMaterialSelected = ref<meshMaterial>(meshMaterials[0]);
 const heroMaterialColor = ref<hex>('FF0000');
-const heroPosition = ref<position>({
-    x: 0,
-    y: 0,
-    z: 0,
-});
 
 export function useSettingsHero() {
     function resetHeroPosition() {
-        heroPosition.value = {
+        heroGeometrySelected.value.position = {
             x: 0,
             y: 0,
             z: 0,
@@ -27,7 +22,6 @@ export function useSettingsHero() {
         heroGeometrySelected,
         heroMeshMaterialSelected,
         heroMaterialColor,
-        heroPosition,
         resetHeroPosition,
     };
 }

@@ -16,7 +16,7 @@ import { useSettingsHero } from '@/composables/useSettingsHero';
 
 const { autoRotate } = useSettingsOrbitControls();
 const { gridHelperPosition, toggleGridHelper } = useSettingsGridHelper();
-const { heroPosition } = useSettingsHero();
+const { heroGeometrySelected } = useSettingsHero();
 
 const showSettings = ref<boolean>(false);
 </script>
@@ -53,7 +53,7 @@ const showSettings = ref<boolean>(false);
         </section>
         <section class="hero-details" title="Hero position">
             <i class="pi pi-box" />
-            {{ `x ${heroPosition.x}, y ${heroPosition.y}, x ${heroPosition.z}` }}
+            {{ `x ${heroGeometrySelected.position.x}, y ${heroGeometrySelected.position.y}, x ${heroGeometrySelected.position.z}` }}
         </section>
     </main>
     <aside>

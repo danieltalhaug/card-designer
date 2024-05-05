@@ -14,7 +14,6 @@ const {
     heroGeometrySelected,
     heroMeshMaterialSelected,
     heroMaterialColor,
-    heroPosition,
 } = useSettingsHero();
 
 </script>
@@ -22,7 +21,7 @@ const {
 <template>
     <TresCanvas :clear-color="`#${sceneColor}`" shadows window-size>
         <TresMesh
-            :position="[heroPosition.x, heroPosition.z, heroPosition.y]"
+            :position="[heroGeometrySelected.position.x, heroGeometrySelected.position.z, heroGeometrySelected.position.y]"
             cast-shadow
         >
             <Component :is="heroGeometrySelected.component" />

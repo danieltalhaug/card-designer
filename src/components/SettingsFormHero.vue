@@ -11,7 +11,6 @@ const {
     heroGeometrySelected,
     heroMeshMaterialSelected,
     heroMaterialColor,
-    heroPosition,
     resetHeroPosition,
 } = useSettingsHero();
 
@@ -55,7 +54,7 @@ const {
                 <span>
                     <label for="heroPositionX">X</label>
                     <Slider
-                        v-model="heroPosition.x"
+                        v-model="heroGeometrySelected.position.x"
                         id="heroPositionX"
                         :min="-30"
                         :max="30"
@@ -65,7 +64,7 @@ const {
                 <span>
                     <label for="heroPositionY">Y</label>
                     <Slider
-                        v-model="heroPosition.y"
+                        v-model="heroGeometrySelected.position.y"
                         id="heroPositionY"
                         :min="-30"
                         :max="30"
@@ -75,7 +74,7 @@ const {
                 <span>
                     <label for="heroPositionZ">Z</label>
                     <Slider
-                        v-model="heroPosition.z"
+                        v-model="heroGeometrySelected.position.z"
                         id="heroPositionZ"
                         :min="-30"
                         :max="30"
