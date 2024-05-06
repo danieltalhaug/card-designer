@@ -70,7 +70,7 @@ const heroRotation = computed(() => {
             cast-shadow
         />
         <TresGridHelper
-            :position="[...gridHelperPosition]"
+            :position="[...Object.values(gridHelperPosition)]"
             :args="gridHelperArgs"
         />
     </TresCanvas>
