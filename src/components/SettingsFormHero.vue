@@ -15,6 +15,8 @@ const {
     resetHeroRotation,
 } = useSettingsHero();
 
+const axises = ['x', 'y', 'z'];
+
 </script>
 
 <template>
@@ -52,31 +54,13 @@ const {
         <section>
             <label for="heroPosition">Position</label>
             <div id="heroPosition" class="position-sliders">
-                <span>
-                    <label for="heroPositionX">X</label>
+                <span v-for="axis in axises" :key="axis">
+                    <label :for="`heroPosition${axis}`">
+                        {{ axis.toUpperCase() }}
+                    </label>
                     <Slider
-                        v-model="heroGeometrySelected.position.x"
-                        id="heroPositionX"
-                        :min="-30"
-                        :max="30"
-                        :step="0.1"
-                    />
-                </span>
-                <span>
-                    <label for="heroPositionY">Y</label>
-                    <Slider
-                        v-model="heroGeometrySelected.position.y"
-                        id="heroPositionY"
-                        :min="-30"
-                        :max="30"
-                        :step="0.1"
-                    />
-                </span>
-                <span>
-                    <label for="heroPositionZ">Z</label>
-                    <Slider
-                        v-model="heroGeometrySelected.position.z"
-                        id="heroPositionZ"
+                        v-model="heroGeometrySelected.position[axis]"
+                        :id="`heroPosition${axis}`"
                         :min="-30"
                         :max="30"
                         :step="0.1"
@@ -95,31 +79,13 @@ const {
         <section>
             <label for="heroRotation">Rotation</label>
             <div id="heroRotation" class="position-sliders">
-                <span>
-                    <label for="heroRotationX">X</label>
+                <span v-for="axis in axises" :key="axis">
+                    <label :for="`heroRotation${axis}`">
+                        {{ axis.toUpperCase() }}
+                    </label>
                     <Slider
-                        v-model="heroGeometrySelected.rotation.x"
-                        id="heroRotationX"
-                        :min="-360"
-                        :max="360"
-                        :step="1"
-                    />
-                </span>
-                <span>
-                    <label for="heroRotationY">Y</label>
-                    <Slider
-                        v-model="heroGeometrySelected.rotation.y"
-                        id="heroRotationY"
-                        :min="-360"
-                        :max="360"
-                        :step="1"
-                    />
-                </span>
-                <span>
-                    <label for="heroRotationZ">Z</label>
-                    <Slider
-                        v-model="heroGeometrySelected.rotation.z"
-                        id="heroRotationZ"
+                        v-model="heroGeometrySelected.rotation[axis]"
+                        :id="`heroRotation${axis}`"
                         :min="-360"
                         :max="360"
                         :step="1"
